@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-     public Rigidbody2D rb;
-
     public float enemySpeed;
 
     public GameObject player;
@@ -33,5 +31,10 @@ public class Enemy : MonoBehaviour
         {
             Destroy(gameObject);   
         }   
+        if (collision.gameObject.tag == "bullet")
+        {
+            Destroy(gameObject);
+            Destroy(collision);   
+        } 
     }
 }
