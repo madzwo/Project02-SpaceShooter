@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class Enemy : MonoBehaviour
 {
@@ -12,7 +14,7 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
-        player = GameObject.Find("Player");
+
     }
 
     void Update()
@@ -29,12 +31,12 @@ public class Enemy : MonoBehaviour
     {   
         if (collision.gameObject.tag == "player")
         {
-            Destroy(gameObject);   
+            SceneManager.LoadScene(2);
         }   
         if (collision.gameObject.tag == "bullet")
         {
             Destroy(gameObject);
-            Destroy(collision);   
+            Destroy(collision);
         } 
     }
 }
